@@ -1,0 +1,24 @@
+
+sh configuration | display set
+exit
+Last login: Wed Apr 18 15:51:51 from 192.168.30.139
+
+--- JUNOS 17.1R1.8 Kernel 64-bit  JNPR-10.3-20170209.344539_build
+test@JUNOS> show configuration | display set 
+set version 17.1R1.8
+set system host-name JUNOS
+set system root-authentication encrypted-password "$6$One16A4Y$Sh40Ca4pBvVtS6bEhO/xPpYmZTO4yIq3anXrn1aaFHhwQ1VbPB5LsdLHP5q3sN8yD0B6vlModm.CIcwtKQtX2/"
+set system login user test uid 2000
+set system login user test class super-user
+set system login user test authentication encrypted-password "$6$lbPNlhlr$5VQ4hBSfVM6ji4Vpklayxkmy5i2p3/xN59UBEGIzsmse7L7yg9qUPkX1lDltFv3qY6ZOSuXzetl5.l64tH0d/1"
+set system services telnet
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set interfaces fxp0 unit 0 family inet dhcp
+set interfaces lo0 unit 0 family inet address 1.1.1.1/32
+
+test@JUNOS> exit 
+
+

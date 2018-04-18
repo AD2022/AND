@@ -1,0 +1,69 @@
+ 
+en
+terminal length 0
+show running
+
+exit
+
+Last login: Wed Apr 18 15:19:42 from 192.168.30.139
+en
+terminal length 0
+show running
+
+exit
+
+localhost>en
+localhost#terminal length 0
+Pagination disabled.
+localhost#show running
+! Command: show running-config
+! device: localhost (vEOS, EOS-4.20.1F)
+!
+! boot system flash:/vEOS-lab.swi
+!
+transceiver qsfp default-mode 4x10G
+!
+spanning-tree mode mstp
+!
+no aaa root
+!
+username test privilege 15 secret sha512 $6$t7rDT5rYBBIGEdop$Srl25eildWBAFKIZYkfakolHc2qE43vOCmKtDJa/E8fjNWUEVeGksSFVDj7rpJjuzK8HIGw.lUNafOE0l2KSx0
+!
+interface Ethernet1
+!
+interface Ethernet2
+!
+interface Ethernet3
+!
+interface Ethernet4
+!
+interface Ethernet5
+!
+interface Ethernet6
+!
+interface Ethernet7
+!
+interface Ethernet8
+!
+interface Ethernet9
+!
+interface Ethernet10
+!
+interface Ethernet11
+!
+interface Ethernet12
+!
+interface Management1
+   ip address dhcp
+!
+ip route 0.0.0.0/0 192.168.0.2
+!
+no ip routing
+!
+management telnet
+   no shutdown
+!
+end
+localhost#
+localhost#exit
+

@@ -1,0 +1,169 @@
+ 
+**************************************************************************
+* IOSv - Cisco Systems Confidential                                      *
+*                                                                        *
+* This software is provided as is without warranty for internal          *
+* development and testing purposes only under the terms of the Cisco     *
+* Early Field Trial agreement.  Under no circumstances may this software *
+* be used for production purposes or deployed in a production            *
+* environment.                                                           *
+*                                                                        *
+* By using the software, you agree to abide by the terms and conditions  *
+* of the Cisco Early Field Trial Agreement as well as the terms and      *
+* conditions of the Cisco End User License Agreement at                  *
+* http://www.cisco.com/go/eula                                           *
+*                                                                        *
+* Unauthorized use or distribution of this software is expressly         *
+* Prohibited.                                                            *
+**************************************************************************
+vIOS-PK-02#terminal length 0
+vIOS-PK-02#show runn
+Building configuration...
+
+Current configuration : 4858 bytes
+!
+! Last configuration change at 14:59:39 UTC Wed Apr 18 2018 by test
+!
+version 15.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname vIOS-PK-02
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+username test privilege 15 password 0 test123
+!
+redundancy
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface GigabitEthernet0/0
+ ip address dhcp
+ duplex auto
+ speed auto
+ media-type rj45
+!
+router ospf 1
+ network 1.1.0.2 0.0.0.0 area 0
+ network 2.2.2.2 0.0.0.0 area 0
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+banner exec ^C
+**************************************************************************
+* IOSv - Cisco Systems Confidential                                      *
+*                                                                        *
+* This software is provided as is without warranty for internal          *
+* development and testing purposes only under the terms of the Cisco     *
+* Early Field Trial agreement.  Under no circumstances may this software *
+* be used for production purposes or deployed in a production            *
+* environment.                                                           *
+*                                                                        *
+* By using the software, you agree to abide by the terms and conditions  *
+* of the Cisco Early Field Trial Agreement as well as the terms and      *
+* conditions of the Cisco End User License Agreement at                  *
+* http://www.cisco.com/go/eula                                           *
+*                                                                        *
+* Unauthorized use or distribution of this software is expressly         *
+* Prohibited.                                                            *
+**************************************************************************^C
+banner incoming ^C
+**************************************************************************
+* IOSv - Cisco Systems Confidential                                      *
+*                                                                        *
+* This software is provided as is without warranty for internal          *
+* development and testing purposes only under the terms of the Cisco     *
+* Early Field Trial agreement.  Under no circumstances may this software *
+* be used for production purposes or deployed in a production            *
+* environment.                                                           *
+*                                                                        *
+* By using the software, you agree to abide by the terms and conditions  *
+* of the Cisco Early Field Trial Agreement as well as the terms and      *
+* conditions of the Cisco End User License Agreement at                  *
+* http://www.cisco.com/go/eula                                           *
+*                                                                        *
+* Unauthorized use or distribution of this software is expressly         *
+* Prohibited.                                                            *
+**************************************************************************^C
+banner login ^C
+**************************************************************************
+* IOSv - Cisco Systems Confidential                                      *
+*                                                                        *
+* This software is provided as is without warranty for internal          *
+* development and testing purposes only under the terms of the Cisco     *
+* Early Field Trial agreement.  Under no circumstances may this software *
+* be used for production purposes or deployed in a production            *
+* environment.                                                           *
+*                                                                        *
+* By using the software, you agree to abide by the terms and conditions  *
+* of the Cisco Early Field Trial Agreement as well as the terms and      *
+* conditions of the Cisco End User License Agreement at                  *
+* http://www.cisco.com/go/eula                                           *
+*                                                                        *
+* Unauthorized use or distribution of this software is expressly         *
+* Prohibited.                                                            *
+**************************************************************************^C
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ exec-timeout 0 0
+ login local
+ transport input all
+!
+no scheduler allocate
+!
+end
+
+vIOS-PK-02#exit
+
